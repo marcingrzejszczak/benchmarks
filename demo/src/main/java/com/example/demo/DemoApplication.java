@@ -17,6 +17,8 @@ import io.opentelemetry.sdk.trace.SdkTracerProvider;
 //@SpringBootApplication
 public class DemoApplication {
 
+	static int count = 10_000_000;
+
 	static {
 		Logger.getLogger(DemoApplication.class.getName()).setLevel(Level.OFF);
 	}
@@ -24,8 +26,6 @@ public class DemoApplication {
 	static class Brave {
 
 		public static void main(String[] args) {
-
-			int count = 10_000_000;
 
 			BraveState braveState = new BraveState();
 			braveState.setup();
@@ -52,8 +52,6 @@ public class DemoApplication {
 	static class OTel {
 
 		public static void main(String[] args) {
-
-			int count = 10_000_000;
 
 			OtelState otelState = new OtelState();
 			otelState.setup();
